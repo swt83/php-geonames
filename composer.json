@@ -1,5 +1,5 @@
 {
-    "name": "travis/zip2city",
+    "name": "travis/geonames",
     "authors": [
         {
             "name": "Scott Travis",
@@ -13,17 +13,17 @@
         },
         {
             "type": "vcs",
-            "url": "git@github.com:swt83/php-object2array.git"
+            "url": "git@github.com:swt83/php-csv.git"
         }
     ],
     "require": {
         "php": ">=5.3.0",
         "travis/ex": "1.0.*",
-        "travis/object2array": "1.0.*"
+        "travis/csv": "1.2.*"
     },
     "autoload": {
         "psr-4": {
-            "Travis\\": "src/"
+            "Travis\\": "src/models/"
         }
     },
     "minimum-stability": "dev"

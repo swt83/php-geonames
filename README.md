@@ -2,7 +2,7 @@
 
 A PHP library for converting zip codes to city and state.
 
-Uses the Google Maps API w/out the need for an API key.
+Uses the Geonames (database)[http://download.geonames.org/export/zip/] file.
 
 ## Install
 
@@ -11,7 +11,11 @@ Normal install via composer.
 ## Usage
 
 ```php
-$response = Travis\Zip2City::run(22202);
+// load the database
+$geonames = new Travis\Geonames;
+
+// find the answer
+$response = $geonames->get(22202);
 ```
 
 Will return an array like this:
@@ -19,25 +23,12 @@ Will return an array like this:
 ```
 Array
 (
-    [zip] => Array
-        (
-            [long] => 22202
-            [short] => 22202
-        )
-
-    [city] => Array
-        (
-            [long] => Arlington
-            [short] => Arlington
-        )
-
-    [state] => Array
-        (
-            [long] => Virginia
-            [short] => VA
-        )
-
+    [country] => US
+    [zip] => 22202
+    [city] => Arlington
+    [state_long] => Virginia
+    [state_short] => VA
 )
 ```
 
-This is designed for addresses in the United States.
+This is only designed for the United States.
