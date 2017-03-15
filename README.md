@@ -1,8 +1,8 @@
-# zip2city
+# Geonames
 
 A PHP library for converting zip codes to city and state.
 
-Uses the Geonames (database)[http://download.geonames.org/export/zip/] file.
+Uses the Geonames [database](http://download.geonames.org/export/zip/) file.
 
 ## Install
 
