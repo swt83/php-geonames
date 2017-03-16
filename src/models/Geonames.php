@@ -38,7 +38,7 @@ class Geonames
 			$r = [];
 			foreach ($this->map as $key => $value)
 			{
-				$r[$value] = $row[$key];
+				$r[(string) $value] = $row[$key];
 			}
 
 			// add to array
