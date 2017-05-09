@@ -3,6 +3,7 @@
 namespace Travis;
 
 use Travis\CSV;
+use Travis\Zipcode;
 
 class Geonames
 {
@@ -46,8 +47,17 @@ class Geonames
 		}
 	}
 
-	public function find($zip)
+	public function find($str)
 	{
-		return ex($this->array, $zip);
+		// clean the zipcode
+		$zipcode = Zipcode::make($str);
+
+		// fetch from array
+		return ex($this->array, $zipcode->five);
+	}
+
+	public function get($str)
+	{
+		return $this->find($str);
 	}
 }
